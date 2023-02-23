@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoAppo_AdrianC.Views.AppoLoginPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="BlanchedAlmond"
+             BackgroundImageSource="AppoLGBG">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"
+                     Padding="50,0,50,200">
+            <Entry x:Name="TxtEmail" Placeholder ="Email" PlaceholderColor="White" TextColor="White"  FontSize="25" Keyboard="Email"/>
+            <Entry x:Name="TxtPassword" Placeholder="Password" PlaceholderColor="White" TextColor="White" FontSize="25" IsPassword="True"/>
+
+            <Button x:Name="BtnLogin" Text="Login " Background="Green" FontSize="20" CornerRadius="10" Clicked="Button_Clicked" />
+            <Button x:Name="BtnSignUp" Text="Sign Up" BackgroundColor="orange" FontSize="20"  CornerRadius="10"  Clicked="BtnSignUp_Clicked"/>
+            <Label Text="Forgot Password?" TextColor="White" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
