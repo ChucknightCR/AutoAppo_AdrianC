@@ -57,7 +57,6 @@ namespace AutoAppo_AdrianC.Views
                 {
                     UserDialogs.Instance.HideLoading();
                 }
-
             }
             else
             {
