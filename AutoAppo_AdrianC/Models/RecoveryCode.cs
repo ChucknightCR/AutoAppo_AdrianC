@@ -1,55 +1,33 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Text;
+using RestSharp;
+using System.Net;
 using System.Threading.Tasks;
-
-
+using Newtonsoft.Json;
 
 namespace AutoAppo_AdrianC.Models
 {
-    public  class User
+    public class RecoveryCode
     {
         public RestRequest Request { get; set; }
-       
 
-        public User()
-        {
-            
-        }
-
-        //atributos para la clase. En esteejemplo usarmeos los atributos identicos a la clase del app.
-        //Posteriormente usaremos DTO
-
-        public int UserId { get; set; }
-        public string Name { get; set; } = null!;
+        public int RecoveryCodeId { get; set; }
         public string Email { get; set; } = null!;
-        public string PhoneNumber { get; set; } = null!;
-        public string LoginPassword { get; set; } = null!;
-        public string? CardId { get; set; }
-        public string? Address { get; set; }
-        public int UserRoleId { get; set; }
-        public int UserStatusId { get; set; }
-
-        public virtual UserRole UserRole { get; set; } = null!;
-        public virtual UserStatus UserStatus { get; set; } = null!;
-        //public virtual ICollection<Appointment> Appointments { get; set; }
+        public string RecoveryCode1 { get; set; } = null!;
+        //public DateTime GenerateDate { get; set; }
+        //public bool IsUsed { get; set; }
 
 
-        //funciones
-        public async Task<bool> ValidateLogin()
+
+        public async Task<bool> ValidateRecoveryCode()
         {
             try
             {
 
-                //En APIConnection definimos un prefijo para la ruta de consumos de los 
-                //end points. Acá tenemos que agregar el resto de la ruta para la función
-                //que queremos usar dentro del controller
 
-                string RouteSufix = string.Format("Users/ValidateUserLogin?pUserName={0}&pPassword={1}",
-                                                  this.Email, this.LoginPassword);
+                string RouteSufix = string.Format("RecoveryCodes/ValidateCode?pEmail={0}&pRecoveryCode={1}",
+                                                  this.Email, this.RecoveryCode1);
 
                 //con esto obtenemos la ruta completa de consumo del API 
                 string URL = Services.APIConnection.ProductionURLPrefix + RouteSufix;
@@ -89,11 +67,12 @@ namespace AutoAppo_AdrianC.Models
 
         }
 
-        public async Task<bool> AddUser()
+
+        public async Task<bool> AddRecoveryCode()
         {
             try
             {
-                string RouteSufix = string.Format("Users");
+                string RouteSufix = string.Format("RecoveryCodes");
 
                 //con esto obtenemos la ruta completa de consumo del API 
                 string URL = Services.APIConnection.ProductionURLPrefix + RouteSufix;
@@ -138,6 +117,12 @@ namespace AutoAppo_AdrianC.Models
             }
 
         }
+
+
+
+
+
+
 
 
     }

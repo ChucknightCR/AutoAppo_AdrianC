@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoAppo_AdrianC.Views.OptionsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <FlexLayout Direction="Column">
+                <Label Text="{Binding GetUserData}"
+                TextColor="Purple"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                VerticalTextAlignment="Start"
+                HorizontalTextAlignment="Start"
+                FontSize="25"/>
+                
+            <Label Text="Select an Action"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="25"/>
+
+            <Grid Padding="10,20,10,0" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                        <Button Grid.Row="0" Grid.Column="0"
+                                x:Name="BtnAppoManagment"
+                                Text="Appoinment Managment"
+                                BackgroundColor="Green"
+                                    HeightRequest="150"
+                                    WidthRequest="100"
+                                    FontSize="17"
+                                    CornerRadius="20" Clicked="BtnAppoManagment_Clicked"/>
+                        <Button Grid.Row="0" Grid.Column="1"
+                                x:Name="BtnUserManagement"
+                                Text="User Management"
+                                BackgroundColor="Green"
+                                 HeightRequest="100"
+                                 WidthRequest="100"
+                                 FontSize="17"
+                                 CornerRadius="20"/>
+                    <Button Grid.Row="1" Grid.Column="0"
+                                x:Name="BtnScheduleManagement"
+                                Text="Schedule Management"
+                                BackgroundColor="Green"
+                                 HeightRequest="100"
+                                 WidthRequest="100"
+                                 FontSize="17"
+                                 CornerRadius="20"/>
+                    <Button Grid.Row="1" Grid.Column="1"
+                                x:Name="BtnServicesManagement"
+                                Text="Services Management"
+                                BackgroundColor="Green"
+                                 HeightRequest="100"
+                                 WidthRequest="100"
+                                 FontSize="17"
+                                 CornerRadius="20"/>
+
+                </Grid>
+            </FlexLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,8 +11,8 @@ namespace AutoAppo_AdrianC.Services
 
         //Además, acá vamos a escribir la info del API KEY, necesitamos podernos validar 
 
-        public static string ProductionURLPrefix = "http://192.168.8.100:45455/api/";
-        public static string TestingURLPrefix = "http://192.168.8.100:45455/api/";
+        public static string ProductionURLPrefix = "http://192.168.8.103:45455/api/";
+        public static string TestingURLPrefix = "http://192.168.8.103:45455/api/";
 
         public static string ApiKeyName = "P6ApiKey";
         public static string ApiKeyValue = "ASDASDASD";

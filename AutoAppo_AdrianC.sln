@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoAppo_AdrianC.Android", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoAppo_AdrianC.iOS", "AutoAppo_AdrianC.iOS\AutoAppo_AdrianC.iOS.csproj", "{1F7CFD53-0454-4A06-A43C-65ECE17D17B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoAppo_AdrianC", "AutoAppo_AdrianC\AutoAppo_AdrianC.csproj", "{84CCF229-CF07-4D6A-8761-72BA43EA13FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoAppo_AdrianC", "AutoAppo_AdrianC\AutoAppo_AdrianC.csproj", "{84CCF229-CF07-4D6A-8761-72BA43EA13FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

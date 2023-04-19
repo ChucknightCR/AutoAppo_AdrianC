@@ -8,20 +8,31 @@ using System.Threading.Tasks;
 
 namespace AutoAppo_AdrianC.Models
 {
-    public class UserRole
+    public class UserDTO
     {
-        public RestRequest Request { get; set; }
+        //El estandar es usar DTOs en los modelos del app, por asunto de seguridad y facilidad de pasar
+        //los json entre app y api.
+        //Obviamente, esta facilidad se ve reflejada en cierta complejidad
 
-        public int UserRoleId { get; set; }
-        public string UserRoleDescription { get; set; }
+        public RestRequest Request { get; set; }    
 
-        //funciones
+       public int IDUsuario { get; set; }
+        public string Nombre { get; set; } = null!;
+        public string Correo { get; set; } = null!;
+        public string NumeroTelefono { get; set; } = null!;
+        public string Contrasennia { get; set; } = null!;
+        public string Cedula { get; set; }
+        public string Direccion { get; set; }
+        public int IdRol { get; set; }
+        public int IdEstado { get; set; }
+        public string EstadoDescripcion { get; set; } = null!;
+        public string RolDescripcion { get; set; } = null!;
 
-        public async Task<List<UserRole>> GetAllUserRoleList()
+        public async Task<UserDTO> GetUserData(string email)
         {
             try
             {
-                string RouteSufix = string.Format("UserRoles");
+                string RouteSufix = string.Format("Users/GetUserData?email={0}", email);
 
                 //con esto obtenemos la ruta completa de consumo del API 
                 string URL = Services.APIConnection.ProductionURLPrefix + RouteSufix;
@@ -41,10 +52,11 @@ namespace AutoAppo_AdrianC.Models
 
                 if (statusCode == HttpStatusCode.OK)
                 {
-                    //usamos newtonsoft para descomponer el paquete json que nos llega
-                    //desde el API
-                    var list = JsonConvert.DeserializeObject<List<UserRole>>(response.Content);
-                    return list;
+                    var list = JsonConvert.DeserializeObject<List<UserDTO>>(response.Content);
+
+                    var item = list[0];
+
+                    return item;
                 }
                 else
                 {
@@ -63,6 +75,7 @@ namespace AutoAppo_AdrianC.Models
             }
 
         }
+
 
     }
 }
